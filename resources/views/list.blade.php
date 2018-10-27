@@ -152,7 +152,7 @@
 
         });
         
-
+        
         let request=function(URL,METHOD,DATA)
         {
             return this.request = $.ajax({
@@ -161,7 +161,7 @@
                 data:DATA,
                 dataType: "html"
             });
-       };
+        };
 
 
 
