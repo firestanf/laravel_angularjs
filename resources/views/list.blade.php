@@ -22,7 +22,7 @@
     <script src="js/controller/List.controller.js"></script>
     <script src="js/controller/todo/finished.controller.js"></script>
 
-    <script src="js/directive/User_info.directive.js"></script>
+
 
     <!-- My Custom Js -->
 

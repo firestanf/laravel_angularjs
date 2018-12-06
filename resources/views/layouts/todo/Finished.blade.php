@@ -12,7 +12,7 @@
                 <button class="btn btn-danger  progress-button"  style="float:right;" ng-click="finish_progress()">Finished</button>
                 <button class="btn btn-primary  progress-button"  style="float:right;" ng-click="return_progress()">On-Progress</button>
                 </li>
-
+<finished></finished>
                 
             </ul>
         

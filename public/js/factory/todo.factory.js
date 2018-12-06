@@ -25,3 +25,8 @@ function todo($http,$q,$rootScope)
     }
     return factory;
 }
+
+
+//info
+
+// https://stackoverflow.com/questions/37296070/angularjs-directive-templateurl-in-laravel5-2
