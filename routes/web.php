@@ -25,4 +25,10 @@ Route::get('/list','ListController@Get_list');
 //Adding TODO
 Route::post('/API/V1/ADD','ListController@Add_Todo');
 Route::patch('/API/V1/UPDATE','ListController@Update_Todo');
+Route::delete('/API/V1/DELETE','ListController@Delete_Todo');
+
+
+
+Auth::routes();
+
 

@@ -11,8 +11,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" id="close">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                    <button type="button" class="btn btn-danger">Delete</button>
+                    <button type="button" class="btn btn-primary" id="save">Save changes</button>
+                    <button type="button" class="btn btn-danger" id="delete">Delete</button>
                 </div>
             </div>
         </div>

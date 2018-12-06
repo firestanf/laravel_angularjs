@@ -34,22 +34,58 @@ class ListController extends Controller
         $Todo=new Todo();
 
         $Todo->content=$Data->Todo_item;
-
+        $Todo->finished=0;
         if($Todo->user()->associate($User_info::find(1))->save())
         {
-            return $Response_array=array('Status'=>True,'Message'=>'Created New Todo');
+            return array('Status'=>True,'Message'=>'Created New Todo');
             //return ['posts' => $items,'comment' => $cmnt];
         }
         else 
         {
-            return $Response_array=array('Status'=>False,'Message'=>'There Is An Error In Server');
+            return array('Status'=>False,'Message'=>'There Is An Error In Server');
         }
-    }
+    }   
+
+
         public function Update_Todo(Request $Data)
-        {
+        {  
             $Todo=new Todo();
-            return $Todo::find($Data->Position)->get();
+            $Todo=$Todo::find($Data->Position);
+
+            if($Todo->finished === 1)
+            {
+                $Todo->finished=0;
+            }
+            else if($Todo->finished === 0)
+            {
+                $Todo->finished=1;
+            }
+            
+            if($Todo->Save())
+            {
+                return ['Status'=>True,'Message'=>'Todo Updated'];
+                
+            }else
+            {   
+                return ['Status'=>False,'Message'=>'There Is An Error In Server'];
+            }
+
         }
+    
+        public function Delete_Todo(Request $Data)
+        {  
+            if(App\Flight::destroy($Data->position))
+            {
+                return ['Status'=>True,'Message'=>'Todo Deleted'];
+            }
+            else
+            {
+                return ['Status'=>False,'Message'=>'There Is An Error In Server'];
+            }
+            
+
+        }
+    
     
     
 }
