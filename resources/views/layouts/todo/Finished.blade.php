@@ -6,16 +6,15 @@
         </div>
             
             <ul class="panel-body progress-body">
-                <li class="progress-entity " ng-class="{finishedbottom:$index != total_finishedtask}" ng-repeat="data in list_data">
-                <p class="progress-text ">
-                   <% data.des %></p>
-                <button class="btn btn-danger  progress-button"  style="float:right;" ng-click="finish_progress()">Finished</button>
-                <button class="btn btn-primary  progress-button"  style="float:right;" ng-click="return_progress()">On-Progress</button>
+                <li class="progress-entity " ng-class="{finishedbottom:$index != total_task-1}" ng-repeat="data in list_data" ng-if="total_task != 0">
+                <p class="progress-text"><% data.des %></p>
+                <button class="btn btn-danger  progress-button"  style="float:right;" data-position= '<%$index%>' ng-click="finish_progress($event)">Finished</button>
+                <button class="btn btn-primary  progress-button"  style="float:right;" data-position= '<%$index%>' ng-click="return_progress($event)">On-Progress</button>
                 </li>
-<finished></finished>
-                
+                <li class="progress-entity " ng-if="total_task < 1">
+                    Loading..
+             </li>
             </ul>
-        
 
     </div>
 </div>

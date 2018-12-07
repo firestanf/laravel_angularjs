@@ -21,13 +21,13 @@
     <script src="js/factory/todo.factory.js"></script>
     <script src="js/controller/List.controller.js"></script>
     <script src="js/controller/todo/finished.controller.js"></script>
-
-
+    <script src="js/controller/todo/onprogress.controller.js"></script>
 
     <!-- My Custom Js -->
 
     <!-- Custom css -->
     <link href="css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/loading.css">
     </link>
     <!-- Custom css -->
 
