@@ -1,7 +1,7 @@
 <div class="col-lg-6" ng-controller="todo_onprogressctrl">
     <div class="panel panel-primary ">
         <div class="panel-heading"  style="overflow: hidden;">
-            <p class="panel-title"> On-Progress Task </p>
+            <p class="panel-title"> Current Task </p>
             <p class="chip"><% total_task %></p>
         </div>
 
@@ -12,9 +12,9 @@
                     <button class="btn btn-warning  progress-button" data-position= '<%$index%>' ng-click="finish_progress($event)" style="float:right;">Finished</button>
                     </li>
                     <li class="progress-entity " ng-if="total_task < 1">
-                        Loading..
+                        <% condition%>
                  </li>
-                </ul>
+            </ul>
 
     </div>
 </div>

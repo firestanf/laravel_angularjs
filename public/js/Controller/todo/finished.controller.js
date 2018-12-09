@@ -9,8 +9,12 @@
 
        
         $rootScope.$on('add_finish', function(ev, args){
+            
             switch (args.command)
             {
+            // case "LOADING":
+        
+            // break;
             case "GET_DATA":
             $scope.list_data=args.data;
             $scope.total_task=$scope.list_data.length;

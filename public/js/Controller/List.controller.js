@@ -5,4 +5,7 @@
         $scope.getprogress=function(){
             todofactory.request_todo();
         }
+        $scope.add_todo=function(){
+            $('#AddModal').modal('show');
+        }
     }
