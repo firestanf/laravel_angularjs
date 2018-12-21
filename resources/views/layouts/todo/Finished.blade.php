@@ -12,8 +12,16 @@
                 <button class="btn btn-primary  progress-button"  style="float:right;" data-position= '<%$index%>' ng-click="return_progress($event)">On-Progress</button>
                 </li>
                 <li class="progress-entity " ng-if="total_task < 1">
-                    Loading..
-             </li>
+                    <p ng-if="Status == 'LOADING'">
+                        LOADING....
+                    </p>
+                    <p ng-if="Status == 'IF_EMPTY'">
+                        You Have No Finished Work
+                    </p>
+                    <p ng-if="Status == 'FAIL_UPDATE'">
+                        FAIL TO GET FROM SERVER
+                    </p>
+                </li>
             </ul>
 
     </div>

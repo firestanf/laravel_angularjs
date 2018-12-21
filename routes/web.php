@@ -12,20 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('todo');
 });
 
 
 //Get TODO List
 Route::get('/list','ListController@Get_list');
 
-
-//API
-
-//Adding TODO
-Route::post('/API/V1/ADD','ListController@Add_Todo');
-Route::patch('/API/V1/UPDATE','ListController@Update_Todo');
-Route::delete('/API/V1/DELETE','ListController@Delete_Todo');
 
 
 

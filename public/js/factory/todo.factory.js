@@ -2,36 +2,36 @@ ModuleDeclare.factory('todofactory',['$http','$q','$rootScope',todo]);
 function todo($http,$q,$rootScope)
 {
     var factory={};
-    var on_progress=[];
+    var on_progress=[{des:'this is tehat',
+    created:1544074214}
+    ,        {des:'this is tehat',
+    created:1544074214}
+    ,        {des:'this is tehat',
+    created:1544074214}];
     var fin=[{des:'this is tehat',
     created:1544074214}
     ,        {des:'this is tehat',
     created:1544074214}
     ,        {des:'this is tehat',
     created:1544074214}];
-    var URL='qwdqwd'
+    var URL='https://jsonplaceholder.typicode.com/posts'
 
     factory.request_todo=function(){
-          
-     
+
+  
         setTimeout(() => {
-            $rootScope.$broadcast('add_finish',{});
-            $rootScope.$broadcast('add_onprogress',{});
-            // $http({
-            //     method: 'POST',
-            //     url: URL
-            //   }).then(function successCallback(response) {
-                    
-            //     }, function errorCallback(response) {
-            //         console.log('result error');
-            //         $rootScope.$broadcast('add_finish',{command:'GET_DATA',data:fin});
-            //         $rootScope.$broadcast('add_onprogress',{command:'GET_DATA',data:on_progress});
-                    
-            //   });
-
-
-
-        }, 10000);
+            $http({
+                method: 'POST',
+                url: URL
+              }).then(function successCallback(response) {
+                  console.log()
+                    $rootScope.$broadcast('add_finish',{command:'GET_DATA',data:fin});
+                    $rootScope.$broadcast('add_onprogress',{command:'GET_DATA',data:on_progress}); 
+                }, function errorCallback(response) {
+                    $rootScope.$broadcast('add_finish',{command:'FAIL_UPDATE'});
+                    $rootScope.$broadcast('add_onprogress',{command:'FAIL_UPDATE'});
+              });
+        }, 2500);
 
 
     }

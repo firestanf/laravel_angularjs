@@ -12,8 +12,16 @@
                     <button class="btn btn-warning  progress-button" data-position= '<%$index%>' ng-click="finish_progress($event)" style="float:right;">Finished</button>
                     </li>
                     <li class="progress-entity " ng-if="total_task < 1">
-                        <% condition%>
-                 </li>
+                        <p ng-if="Status == 'LOADING'">
+                            LOADING....
+                        </p>
+                        <p ng-if="Status == 'IF_EMPTY'">
+                            You Have Finished Your Task
+                        </p>
+                        <p ng-if="Status == 'FAIL_UPDATE'">
+                            FAIL TO GET FROM SERVER
+                        </p>
+                    </li>
             </ul>
 
     </div>

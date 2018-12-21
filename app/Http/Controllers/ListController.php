@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Todo;
+use App\Todo_index;
 use App\User;
+use App\Todo_content;
 class ListController extends Controller
 {   
     function ListController()
@@ -15,15 +16,15 @@ class ListController extends Controller
     //For request
     Public function Get_list()
     {   
-        $User=new User();
-        $Result=$User::find(1)->todo;
+        // $User=new User();
+        // $Result=$User::find(1)->todo;
 
-        $Data=[
-            'Posts_data'=> $Result,
-            'Num_of_post'=>$Result->count()
-        ];
+        // $Data=[
+        //     'Posts_data'=> $Result,
+        //     'Num_of_post'=>$Result->count()
+        // ];
 
-        return view('list')->with($Data);
+        return view('todo');
     }
 
 
@@ -31,11 +32,9 @@ class ListController extends Controller
     public Function Add_Todo(Request $Data)
     {   
         $User_info=new User();
-        $Todo=new Todo();
-
-        $Todo->content=$Data->Todo_item;
-        $Todo->finished=0;
-        if($Todo->user()->associate($User_info::find(1))->save())
+        $index=new Todo_index();
+        $index->todo_name='Forsa';
+        if($index->user()->associate($User_info::find(1))->save())
         {
             return array('Status'=>True,'Message'=>'Created New Todo');
             //return ['posts' => $items,'comment' => $cmnt];
@@ -45,6 +44,16 @@ class ListController extends Controller
             return array('Status'=>False,'Message'=>'There Is An Error In Server');
         }
     }   
+    public function Add_task_todo(Request $Data)
+    {
+        $User_info=new User();
+        $index=new Todo_index();
+        $Todo=new Todo_content();
+        
+        // $Todo->content=$Data->Todo_item;
+        // $Todo->finished=0;
+
+    }
 
 
         public function Update_Todo(Request $Data)
