@@ -10,6 +10,10 @@ class Todo_index extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class,'id');
+        return $this->belongsTo(User::class,'todo_owner');
+    }
+    public function content()
+    {
+        return $this->hasMany(Todo_content::class,'todo_id');
     }
 }

@@ -44,18 +44,6 @@ class ListController extends Controller
             return array('Status'=>False,'Message'=>'There Is An Error In Server');
         }
     }   
-    public function Add_task_todo(Request $Data)
-    {
-        $User_info=new User();
-        $index=new Todo_index();
-        $Todo=new Todo_content();
-        
-        // $Todo->content=$Data->Todo_item;
-        // $Todo->finished=0;
-
-    }
-
-
         public function Update_Todo(Request $Data)
         {  
             $Todo=new Todo();
@@ -91,10 +79,44 @@ class ListController extends Controller
             {
                 return ['Status'=>False,'Message'=>'There Is An Error In Server'];
             }
-            
-
         }
     
+        //Task
+        public function Add_task_todo(Request $Data)
+        {
+            $User_info=new User();
+            $index=new Todo_index();
+            $Todo=new Todo_content();
+            
+            $first=$index::where(function ($query) {
+                $query->where('todo_owner', '=', 1)
+                      ->Where('id', '=', 1);
+            })->inRandomOrder()->get();
+            
+            $Todo->task="asd";
+            $Todo->finished=0;
+            $Todo->index()->associate($first[0])->save();
+            
+            return $first[0];
+            // return $User_info::find()->index;
+            // return $first;
+            //return $User_info::find(1)->index;
+                // $Todo->content=$Data->Todo_item;
+                // $Todo->finished=0;
+    
+        }
+        public function Get_task_todo(Request $Data)
+        {
+            $index=new Todo_index();
+            $Todo=new Todo_content();
+            if($index::find(12)->exists() != null){
+                return $Todo::where('todo_id', '=', 1)->get();
+            }
+            else
+            {
+                return 'qwd';
+            }// echo $first;
+        }
     
     
 }

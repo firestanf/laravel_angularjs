@@ -23,6 +23,15 @@ use Illuminate\Http\Request;
 //     return response([1,2,3,4],200); 
 // });
 Route::get('/v1','ListController@Get_Todo');
-Route::post('/v1/add','ListController@Add_Todo');
-Route::patch('/v1/update','ListController@Update_Todo');
-Route::delete('/v1/delete','ListController@Delete_Todo');
+
+//Todo
+Route::post('/v1/todo/add','ListController@Add_Todo');
+Route::patch('/v1/todo/update/{id}','ListController@Update_Todo');
+Route::delete('/v1/todo/delete/{id}','ListController@Delete_Todo');
+
+//Todo/task
+// Route::post('/v1/todo/task/add','ListController@Add_Todo');
+// Route::patch('/v1/todo/task/update/','ListController@Update_Todo');
+// Route::delete('/v1/todo/task/delete','ListController@Delete_Todo');
+
+Route::get('/v1/todo/task','ListController@Get_task_todo');
