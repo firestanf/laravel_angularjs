@@ -20,6 +20,7 @@ class CreateTodoIndexTable extends Migration
             $table->foreign('todo_owner')
                 ->references('id')
                 ->on('users');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

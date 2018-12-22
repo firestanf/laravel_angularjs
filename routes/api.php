@@ -22,16 +22,17 @@ use Illuminate\Http\Request;
 // Route::get('/todo/{id}',function(){
 //     return response([1,2,3,4],200); 
 // });
-Route::get('/v1','ListController@Get_Todo');
+
 
 //Todo
+Route::get('/v1/todo','ListController@Get_all');
 Route::post('/v1/todo/add','ListController@Add_Todo');
-Route::patch('/v1/todo/update/{id}','ListController@Update_Todo');
+Route::post('/v1/todo/update/{id}','ListController@Update_Todo');
 Route::delete('/v1/todo/delete/{id}','ListController@Delete_Todo');
 
 //Todo/task
-// Route::post('/v1/todo/task/add','ListController@Add_Todo');
-// Route::patch('/v1/todo/task/update/','ListController@Update_Todo');
-// Route::delete('/v1/todo/task/delete','ListController@Delete_Todo');
+Route::post('/v1/todo/task/add/{todo_id}','ListController@Add_task_todo');
+// Route::post('/v1/todo/task/update/','ListController@Update_task_todo');
+Route::post('/v1/todo/task/delete/{todo_id}','ListController@Delete_task_todo');
 
-Route::get('/v1/todo/task','ListController@Get_task_todo');
+Route::get('/v1/todo/task/{todo_id}','ListController@Get_task_todo');

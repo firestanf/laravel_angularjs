@@ -20,8 +20,8 @@ class CreateTodoContentTable extends Migration
             $table->integer('todo_id')->unsigned()->index();
             $table->foreign('todo_id')
             ->references('id')
-            ->on('todo_index');
-
+            ->on('todo_index')->onDelete('cascade');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -35,4 +35,5 @@ class CreateTodoContentTable extends Migration
     {
         Schema::dropIfExists('todo');
     }
+    //https://stackoverflow.com/questions/22426165/laravel-soft-delete-posts
 }
