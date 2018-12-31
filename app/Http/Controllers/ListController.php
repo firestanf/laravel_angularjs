@@ -142,7 +142,7 @@ class ListController extends Controller
                 // $Todo->content=$Data->Todo_item;
                 // $Todo->finished=0;
         }
-        public function Get_task_todo(Request $Data,$todo_id)
+        public function Get_all_task_todo(Request $Data,$todo_id)
         {   
             $index=new Todo_index();
             $Todo=new Todo_content();
@@ -181,7 +181,7 @@ class ListController extends Controller
                             return response(['Status'=>True,'Message'=>'delete sucessfull'],200);
                         }
                         else{
-                            
+
                             return response(['Status'=>False,'Message'=>'There Is An Error In Server'],505);
                         }
                     }

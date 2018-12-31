@@ -34,5 +34,4 @@ Route::delete('/v1/todo/delete/{id}','ListController@Delete_Todo');
 Route::post('/v1/todo/task/add/{todo_id}','ListController@Add_task_todo');
 // Route::post('/v1/todo/task/update/','ListController@Update_task_todo');
 Route::post('/v1/todo/task/delete/{todo_id}','ListController@Delete_task_todo');
-
-Route::get('/v1/todo/task/{todo_id}','ListController@Get_task_todo');
+Route::get('/v1/todo/task/{todo_id}','ListController@Get_all_task_todo');

@@ -1,0 +1,339 @@
+/* http://jsfiddle.net/CgXLa/4/ */
+html,body{
+    height:100%;
+};
+.side-nav
+{   
+    height:100% !important;
+    margin:0;padding:0;border:0;
+    display:flex;
+    /*row in reverse*/
+}
+.nav-side
+{   
+    
+    Border:1px solid red;
+    height:100%;
+    width:20%;
+    float:right;
+    overflow:hidden;
+    position:relative;
+
+}
+
+
+
+.nav-side>.logo-web
+{
+    font-size:2em;
+    margin:0;
+    float:left;
+    padding-top:.2em !important;
+    padding-left:.56em !important;
+    
+}
+.nav-side>.buton-user
+{
+    float:right;
+    border:1px solid cyan;
+    margin-top:.8em !important;
+    margin-right:1em !important;
+    
+}
+
+
+
+.nav-side>.title-body
+{  
+     /* position: relative; */
+    Border:1px solid red;
+    width:100%;
+    overflow:auto;
+}
+
+
+
+
+.dropdown-user
+{
+    border:1px solid red;
+}
+
+.Imgonclick
+{   
+    float:right;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    
+}
+.content-body
+{
+    Border:1px solid blue;
+    width:80%;
+    height:100%;
+    float:right;
+}
+.content-body >.content
+{
+    Border:1px solid red;
+    width:70%;
+    display: inline-block;
+}
+
+.content-body >.content> .title-body
+{
+    Border:3px solid green;  
+    overflow:hidden;  
+}
+.content-body >.content> .title-body > .title
+{
+    margin:0 !important;
+    font-size:2.2em;
+    Border:1px solid red;
+    width:auto;
+    float:left;
+
+}
+.content-body > .content > .title-body > div >.title
+{
+    font-size:2em;
+    margin:0;
+    /* border-bottom:1px solid #dee2e6; */
+    margin-bottom:.1em;
+}
+
+
+
+
+.content-body > .content > .current-task
+{
+    Border:2px solid blue;
+}
+.content-body > .content > .current-task >.title
+{
+    font-size:1.3em;
+    margin-bottom:.4em !important;
+    margin:0;
+}
+.content-body > .content > .current-task > .table
+{
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+.content-body > .content > .current-task > .table > thead 
+{
+    background-color:#ced4da;
+}
+.content-body > .content > .current-task > .table > thead .thead-text
+{
+    margin:0;
+    font-weight:500;
+    
+}
+.table .position
+{
+text-align:center;
+}
+.activity-body
+{
+    float:left;
+    Border:1px solid transparent;
+    list-style: none;
+    padding-left:1em;   
+    display:flex; 
+}
+.activity-body >.activity-entity
+{
+    padding: .7em .7em;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    line-height: 1.5em;
+    margin:0 .3em;
+    
+}
+.activity-body >.activity-entity > p
+{
+    margin:0;
+}
+.activity-body >.activity-entity > .Title
+{
+    font-size:1.1em;
+    font-weight:600;
+}
+.activity-body >.activity-entity > .count
+{
+    font-size:1.05em;
+}
+
+.create-todo-body
+{
+    Border:3px solid green;
+    margin-top:5em;
+}
+
+.create-todo-body>.data
+{
+    display:flex;
+    Border:1px solid green;
+    padding:0 .8em;
+}
+.data >.Icon-Chooser
+{
+    cursor:pointer;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+.Error-Text
+{
+    margin:0;
+    margin-left:.8em;
+    margin-right:.8em;
+    Border:1px solid red;
+    padding-left:2.5em;
+
+}
+.add-todo
+{
+    margin:0 .8em;
+    margin-top:.1em;
+    width:93%;
+    padding:.5em;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+.add-todo:hover
+{
+    cursor:pointer;
+}
+.todo-list
+{
+    Border:1px solid red;
+    list-style:none;
+    padding:0;
+
+    /* height:100px; */
+    height: 100%;
+}
+.todo-list > .title
+{
+    Border:1px solid blue;
+    padding:0 !important;
+}
+.todo-list > .title > p
+{
+    Border:1px solid blue;
+    margin-left:0.8em;
+    margin-right:0.8em;
+    width:93%;
+    font-size:1.2em;
+    padding-bottom:.2em;
+
+    margin-top:1.1em;
+}
+.entity
+{   
+    margin-left:0.8em;
+    margin-right:0.8em;
+    height:auto;
+    display:flex;
+    padding: .5em .5em;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    cursor:pointer;
+    margin-bottom:.5em;
+}
+.entity > i
+{   
+    position:relative;
+    /* Border:1px solid black; */
+    height:auto;
+    padding:0 .5em;
+    top:.2em;
+}
+.entity > p
+{
+    margin:0;
+}
+.user-drop
+{
+    Border:1px solid red;
+    height:500px;
+    width:250px !important;
+    float:right;
+    position: absolute;
+    top:.9em;
+    right:1em;
+}
+.user-drop > .user-info
+{
+    border:1px solid red;
+    background: white;
+    display:flex;
+    padding:1em;
+}
+.user-info > p
+{
+    margin:0;
+    Border:1px solid;
+    margin-left:.6em;
+    margin-top:-.3em;
+    font-size:1em;
+    font-weight:600;
+    line-height:2em;
+}
+.user-info > img
+{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+}
+.user-drop > .drop-entity
+{
+    display: flex;
+    Border:1px solid red;
+    background:white;
+    padding:1em;
+}
+.user-drop > .drop-entity > i
+{
+    position: relative;
+    Border: 1px solid black;
+    height: auto;
+    padding: 0 .5em;
+    top: .2em;
+}
+.user-drop > .drop-entity > p
+{
+    margin:0;
+    font-size:1.1em;
+    margin-top: 0;
+
+margin-bottom: 1rem;
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  

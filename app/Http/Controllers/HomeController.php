@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -22,7 +23,15 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
+    {   
+        $data=[
+            'Name'=>Auth::user()->name
+        ];
+        
+        return view('welcome')->with($data);
+    }
+    public function logout()
     {
-        return view('home');
+        Auth::logout();
     }
 }

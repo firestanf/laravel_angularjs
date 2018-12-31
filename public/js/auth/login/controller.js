@@ -1,0 +1,1 @@
+// ModuleDeclare.controller('LoginController',[])
